@@ -4,8 +4,13 @@
     --font-secondary: 'Ubuntu', sans-serif;
 
     /* Colours */
-    --color-light: #f1f1f1;
-    --color-dark: #474747;
+    --color-primary: #474747;
+    --color-light: #ffffff;
+    --color-dark: #f1f1f1;
+
+    --color-primary: #f1f1f1;
+    --color-light: #333333;
+    --color-dark: #3f3f3f;
 
     /* Box Shadow */
     --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -21,11 +26,11 @@ html,
 body {
     font-family: var(--font-secondary);
     font-size: 62.5%;
-    color: var(--color-dark);
+    color: var(--color-primary);
 }
 
 .container {
-    background-color: var(--color-light);
+    background-color: var(--color-dark);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
