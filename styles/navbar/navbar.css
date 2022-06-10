@@ -1,0 +1,22 @@
+.nav {
+    background-color: white;
+    height: 100px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.nav__header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__header {
+    font-size: 40px;
+}
+
+.nav__icon {
+    font-size: 40px;
+    margin-right: 10px;
+}

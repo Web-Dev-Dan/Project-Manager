@@ -1,0 +1,38 @@
+:root {
+    /* Fonts */
+    --font-primary: 'Nunito', sans-serif;
+    --font-secondary: 'Ubuntu', sans-serif;
+
+    /* Colours */
+    --color-light: #f1f1f1;
+    --color-dark: #474747;
+
+    /* Box Shadow */
+    --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: var(--font-secondary);
+    font-size: 62.5%;
+    color: var(--color-dark);
+}
+
+.container {
+    background-color: var(--color-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Temporary */
+.main {
+    flex: 1;
+}
