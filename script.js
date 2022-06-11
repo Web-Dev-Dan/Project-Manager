@@ -169,6 +169,33 @@ const createNewProject = (e) => {
 
     if (createNewProjectInput.value) {
         console.log(`New item created called "${createNewProjectInput.value}".`);
+        userData.listOfProjects.push({
+            "id": userData.listOfProjects.length + 1,
+            "title": createNewProjectInput.value,
+            "summary": "",
+            "description": "",
+            "date": {
+                "dateCreated": "",
+                "hasDueDate": false,
+                "dueDate": ""
+            },
+            "tasks": [],
+            "isCompleted": false,
+            "isInProgress": false,
+            "isIncomplete": true,
+            "isPrioritised": false,
+            "isDeleted": false
+        });
+        console.log(userData);
+
+        // Remove projects and create new list container:
+        // projectListContainer.remove();
+        // const newProjectListContainer = document.createElement('div');
+        // newProjectListContainer.classList.add('project-list-container');
+        // newProjectListContainer.id = 'projectListContainer';
+        // asideContainerInner.appendChild(newProjectListContainer);
+
+        renderProjectListData();
     } else {
         return;
     }
@@ -181,9 +208,21 @@ createNewProjectInputBtn.addEventListener('click', createNewProject);
 
 
 // ----- 👀 Render Project List Data 👀 -----
-const projectListContainer = document.getElementById('projectListContainer');
 
 const renderProjectListData = () => {
+
+    let projectListContainer = document.getElementById('projectListContainer');
+
+    // Remove current projects to re-render:
+    projectListContainer.remove();
+
+    const newProjectListContainer = document.createElement('div');
+    newProjectListContainer.classList.add('project-list-container');
+    newProjectListContainer.id = 'projectListContainer';
+    projectListContainer = newProjectListContainer;
+    asideContainerInner.appendChild(newProjectListContainer);
+
+    // Render userData to browser:
     userData.listOfProjects.forEach(project => {
 
         const newProjectBox = document.createElement('div');
@@ -209,7 +248,7 @@ const renderProjectListData = () => {
             newSummary.textContent = project.summary;
             newContentContainer.appendChild(newSummary);
         } else {
-            console.log('No summary');
+            // console.log('No summary');
         }
 
         if (project.date.hasDueDate) {
@@ -222,7 +261,7 @@ const renderProjectListData = () => {
             newNotification.prepend(newBoldText);
             newContentContainer.appendChild(newNotification);
         } else {
-            console.log('No due date');
+            // console.log('No due date');
         }
 
         const newOpenBtn = document.createElement('button');
@@ -247,9 +286,8 @@ const renderProjectListData = () => {
             newPrioritisedIcon.classList.add('project-box__icon', 'fa-solid', 'fa-star');
             newIconContainer.appendChild(newPrioritisedIcon);
         } else {
-            console.log('Not prioritised');
+            // console.log('Not prioritised');
         }
-
 
     });
 }
