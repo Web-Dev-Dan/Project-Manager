@@ -86,11 +86,45 @@
                 </button>
                 <!-- Aside Content -->
                 <div id="asideContainerInner" class="aside-inner">
+                    <!-- Aside Header -->
                     <h2 class="aside-inner__header">Projects</h2>
-                    <form class="aside-inner__form" action="submit">
-                        <input class="aside-form__input" type="text" placeholder="Project Title...">
-                        <button class="aside-form__button btn-primary"><i class="fa-solid fa-plus"></i> Add</button>
+                    <!-- Create New Project Form -->
+                    <form class="aside-inner__form" autocomplete="off">
+                        <input id="createNewProjectInput" class="aside-form__input" type="text"
+                            placeholder="Project Title...">
+                        <button id="createNewProjectInputBtn" class="aside-form__button btn-primary"><i
+                                class="fa-solid fa-plus"></i> Add</button>
                     </form>
+                    <!-- Project List -->
+                    <div class="project-list-container">
+
+                        <!-- Project 1 -->
+                        <div class="project-list-container__box">
+                            <div class="project-box__content-container">
+                                <!-- Title -->
+                                <h3 class="project-box__title">New Project</h3>
+                                <!-- Summary -->
+                                <p class="project-box__summary">This is some random content about the new project...
+                                </p>
+                                <!-- Due Date -->
+                                <p class="project-box__notification"><strong>Due Date:</strong> 12 July, 2022.</p>
+                                <div class="project-box__buttons">
+                                    <button class="project-box__button btn-primary"><i
+                                            class="project-box__button-icon fa-solid fa-arrow-up-right-from-square"></i>
+                                        Open Project</button>
+                                </div>
+                            </div>
+                            <div class="project-box__icon-container">
+                                <!-- Prioritised -->
+                                <i class="project-box__icon fa-solid fa-star"></i>
+                                <!-- Delete -->
+                                <button class="btn-transparent">
+                                    <i class="project-box__icon fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </aside>
             <!-- To-Dos -->

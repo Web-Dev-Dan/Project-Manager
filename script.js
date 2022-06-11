@@ -75,7 +75,7 @@ const toggleLightDarkMode = () => {
 toggleLightDarkModeBtn.addEventListener('click', toggleLightDarkMode);
 
 
-// ----- ↙️ Minimize Aside Button ↙️ -----
+// ----- 🔎 Minimise / Maximise Aside Button 🔍 -----
 let smallAside = false;
 
 const contentContainer = document.getElementById('contentContainer');
@@ -100,3 +100,23 @@ const resizeAside = () => {
 }
 
 resizeAsideButton.addEventListener('click', resizeAside);
+
+
+// ----- 📝 Add New Items 📝 -----
+const createNewProjectInput = document.getElementById('createNewProjectInput');
+const createNewProjectInputBtn = document.getElementById('createNewProjectInputBtn');
+
+const createNewProject = (e) => {
+    e.preventDefault();
+
+    if (createNewProjectInput.value) {
+        console.log(`New item created called "${createNewProjectInput.value}".`);
+    } else {
+        return;
+    }
+
+    createNewProjectInput.value = '';
+
+}
+
+createNewProjectInputBtn.addEventListener('click', createNewProject);
