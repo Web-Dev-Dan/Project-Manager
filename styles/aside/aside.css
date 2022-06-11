@@ -1,0 +1,36 @@
+.aside {
+    background-color: var(--color-light);
+    position: relative;
+}
+
+.aside-inner {
+    /* background-color: red; */
+    width: 100%;
+    max-height: 800px;
+    overflow-y: scroll;
+}
+
+.aside-inner__header {
+    font-size: 2.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px;
+}
+
+
+/* Minimize Aside Button */
+.aside-minimize__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.aside-minimize__button-icon {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.btn-full-width {
+    width: 100%;
+}

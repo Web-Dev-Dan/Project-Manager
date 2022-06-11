@@ -70,19 +70,38 @@ button:hover {
 }
 
 
-
-
-
+/* General */
 .container {
     background-color: var(--color-dark);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: all .3s;
+}
+
+.content-container {
+    flex: 1;
+    min-height: 400px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 500px auto;
+    grid-gap: 20px;
+}
+
+.content-container__aside-small {
+    grid-template-columns: 50px auto;
 }
 
 
-/* Temporary */
-.main {
-    flex: 1;
+
+/* ----- Media Queries ----- */
+@media only screen and (max-width: 600px) {
+    .text-link {
+        padding-bottom: 3px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        grid-template-columns: 100%;
+        grid-template-rows: 500px auto;
+    }
 }

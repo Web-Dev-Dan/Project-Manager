@@ -52,13 +52,6 @@ const getColourTheme = (theme) => {
 getColourTheme(currentColourTheme); // Call a function and pass in the theme name (stored in variable) to change.
 
 
-
-
-
-
-
-// toggleLightDarkBtn
-
 // ----- 🔆 Toggle Light / Dark Mode 🌙 -----
 let isLightMode = true;
 let isDarkMode = false;
@@ -80,3 +73,30 @@ const toggleLightDarkMode = () => {
 }
 
 toggleLightDarkModeBtn.addEventListener('click', toggleLightDarkMode);
+
+
+// ----- ↙️ Minimize Aside Button ↙️ -----
+let smallAside = false;
+
+const contentContainer = document.getElementById('contentContainer');
+const asideContainerInner = document.getElementById('asideContainerInner');
+const resizeAsideButton = document.getElementById('resizeAsideButton');
+const resizeAsideButtonIcon = document.getElementById('resizeAsideButtonIcon');
+
+const resizeAside = () => {
+    smallAside = !smallAside;
+
+    if (smallAside) {
+        contentContainer.classList.add('content-container__aside-small');
+        asideContainerInner.classList.add('element-hidden');
+        resizeAsideButtonIcon.classList.replace('fa-minimize', 'fa-maximize');
+        resizeAsideButton.classList.add('btn-full-width');
+    } else {
+        contentContainer.classList.remove('content-container__aside-small');
+        asideContainerInner.classList.remove('element-hidden');
+        resizeAsideButtonIcon.classList.replace('fa-maximize', 'fa-minimize');
+        resizeAsideButton.classList.remove('btn-full-width');
+    }
+}
+
+resizeAsideButton.addEventListener('click', resizeAside);
