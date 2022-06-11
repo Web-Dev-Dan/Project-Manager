@@ -31,10 +31,38 @@
 
 <body>
     <div class="container">
+        <!-- Top Notification -->
+        <div class="top-notification-bar">
+            <button class="top-notification-bar__button btn-transparent">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <p class="top-notification-bar__text">Welcome to <strong>taskr v.1.0.0</strong>! This application is
+                currently in beta-stage
+                production.</p>
+        </div>
+
+        <!-- Navigation Bar -->
         <nav class="nav">
-            <div class="nav__header-container">
-                <i class="nav__icon fa-solid fa-layer-group"></i>
+            <!-- Logo / Site Name -->
+            <button class="nav__header-container btn-transparent">
+                <i class="nav__header-icon fa-solid fa-layer-group"></i>
                 <h1 class="nav__header">taskr</h1>
+            </button>
+            <!-- Navigation Links -->
+            <div class="nav__header-links">
+
+                <!-- Light/Dark Mode -->
+                <button class="nav-links__button btn-transparent">
+                    <i class="nav-links__button-icon fa-solid fa-sun"></i>
+                </button>
+                <!-- ChangeLog -->
+                <button class="nav-links__button btn-transparent">
+                    <i class="nav-links__button-icon fa-solid fa-calendar-plus"></i>
+                </button>
+                <!-- User Settings -->
+                <button class="nav-links__button btn-transparent">
+                    <i class="nav-links__button-icon fa-solid fa-circle-user"></i>
+                </button>
             </div>
         </nav>
         <main class="main">Main</main>

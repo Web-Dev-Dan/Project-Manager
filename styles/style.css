@@ -3,6 +3,11 @@
     --font-primary: 'Nunito', sans-serif;
     --font-secondary: 'Ubuntu', sans-serif;
 
+    /* Font Weight */
+    --font-weight-light: 100;
+    --font-weight-medium: 500;
+    --font-weight-heavy: 900;
+
     /* Colours */
     --color-primary: #474747;
     --color-light: #ffffff;
@@ -16,6 +21,7 @@
     --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+/* Universal */
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +35,28 @@ body {
     color: var(--color-primary);
 }
 
+
+
+/* Universal Buttons */
+button:hover {
+    cursor: pointer;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    position: relative;
+}
+
+.btn-transparent:hover {
+    filter: brightness(95%);
+}
+
+
+
+
+
 .container {
     background-color: var(--color-dark);
     min-height: 100vh;
@@ -36,6 +64,26 @@ body {
     flex-direction: column;
 }
 
+.top-notification-bar {
+    background-color: black;
+    text-align: center;
+    position: relative;
+}
+
+.top-notification-bar__text {
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-light);
+    line-height: 1.5;
+    padding: 15px 100px;
+}
+
+.top-notification-bar__button {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
 
 /* Temporary */
 .main {
