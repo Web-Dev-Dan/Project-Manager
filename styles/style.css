@@ -139,6 +139,6 @@ button:hover {
     .content-container {
         flex-direction: column;
         grid-template-columns: 100%;
-        grid-template-rows: 500px auto;
+        grid-template-rows: auto auto;
     }
 }
