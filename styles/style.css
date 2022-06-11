@@ -15,9 +15,9 @@
     --color-dark: #f1f1f1;
 
     /* 'Eclipse' Theme */
-    --color-primary: #f1f1f1;
+    /* --color-primary: #f1f1f1;
     --color-light: #333333;
-    --color-dark: #3f3f3f;
+    --color-dark: #3f3f3f; */
 
     /* ----- Box Shadow ----- */
     --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -78,6 +78,7 @@ button:hover {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: all .3s;
 }
 
 

@@ -1,22 +1,24 @@
 {
-    "ColorPalettes": {
-        "stella": {
+    "ColorPalettes": [
+        {
             "id": 1,
-            "name": "Stella (Light Mode)",
+            "name": "stella",
+            "fullName": "Stella (Light Mode)",
             "colors": {
                 "colorPrimary": "#333333",
                 "colorLight": "#ffffff",
                 "colorDark": "#f1f1f1"
             }
         },
-        "eclipse": {
+        {
             "id": 2,
-            "name": "Eclipse (Dark Mode)",
+            "name": "eclipse",
+            "fullName": "Eclipse (Dark Mode)",
             "colors": {
                 "colorPrimary": "#f1f1f1",
                 "colorLight": "#333333",
                 "colorDark": "#3f3f3f"
             }
         }
-    }
+    ]
 }

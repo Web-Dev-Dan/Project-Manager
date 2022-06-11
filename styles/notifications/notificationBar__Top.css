@@ -5,6 +5,7 @@
 }
 
 .top-notification-bar__text {
+    color: white;
     font-size: 1.6rem;
     font-weight: var(--font-weight-light);
     line-height: 1.5;
@@ -12,6 +13,7 @@
 }
 
 .top-notification-bar__button {
+    color: white;
     font-size: 2rem;
     position: absolute;
     top: 50%;
