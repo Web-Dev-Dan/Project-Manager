@@ -70,6 +70,10 @@
     display: flex;
 }
 
+.project-list-container__box:not(:first-child) {
+    margin-top: 20px;
+}
+
 .project-box__content-container {
     flex: 1;
 }
@@ -102,16 +106,10 @@
     margin-top: 10px;
 }
 
-.project-box__buttons {
-    margin-top: 25px;
-    /* margin-bottom: 10px; */
-    display: flex;
-    justify-content: space-between;
-}
-
 .project-box__button {
     text-transform: uppercase;
     font-size: 1.4rem;
+    margin-top: 25px;
     padding: 5px 20px;
     border-radius: 5px;
 }

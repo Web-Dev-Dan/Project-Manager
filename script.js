@@ -103,6 +103,27 @@ resizeAsideButton.addEventListener('click', resizeAside);
 
 
 // ----- 📝 Add New Items 📝 -----
+let userData = {
+    "userName": "User",
+    "numberOfProjects": 0,
+    "listOfProjects": [
+        {
+            "id": 1,
+            "title": "Some Project",
+            "summary": "This is a summary of some project...",
+            "description": "",
+            "isPrioritised": true,
+            "date": {
+                "dateCreated": "",
+                "hasDueDate": true,
+                "dueDate": "15 August, 2022"
+            },
+            "tasks": [],
+            "isDeleted": false
+        }
+    ]
+};
+
 const createNewProjectInput = document.getElementById('createNewProjectInput');
 const createNewProjectInputBtn = document.getElementById('createNewProjectInputBtn');
 
@@ -120,3 +141,80 @@ const createNewProject = (e) => {
 }
 
 createNewProjectInputBtn.addEventListener('click', createNewProject);
+
+
+// ----- 👀 Render Project List Data 👀 -----
+const projectListContainer = document.getElementById('projectListContainer');
+
+const renderProjectListData = () => {
+    userData.listOfProjects.forEach(project => {
+
+        const newProjectBox = document.createElement('div');
+        newProjectBox.classList.add('project-list-container__box');
+        projectListContainer.appendChild(newProjectBox);
+
+        const newContentContainer = document.createElement('div');
+        newContentContainer.classList.add('project-box__content-container');
+        newProjectBox.appendChild(newContentContainer);
+
+        const newIconContainer = document.createElement('div');
+        newIconContainer.classList.add('project-box__icon-container');
+        newProjectBox.appendChild(newIconContainer);
+
+        const newTitle = document.createElement('h3');
+        newTitle.classList.add('project-box__title');
+        newTitle.textContent = project.title;
+        newContentContainer.appendChild(newTitle);
+
+        if (project.summary) {
+            const newSummary = document.createElement('p');
+            newSummary.classList.add('project-box__summary');
+            newSummary.textContent = project.summary;
+            newContentContainer.appendChild(newSummary);
+        } else {
+            console.log('No summary');
+        }
+
+        if (project.date.hasDueDate) {
+            const newNotification = document.createElement('p');
+            newNotification.classList.add('project-box__notification');
+            const newBoldText = document.createElement('span');
+            newBoldText.classList.add('bold-text');
+            newBoldText.textContent = 'Due Date: ';
+            newNotification.textContent = project.date.dueDate;
+            newNotification.prepend(newBoldText);
+            newContentContainer.appendChild(newNotification);
+        } else {
+            console.log('No due date');
+        }
+
+        const newOpenBtn = document.createElement('button');
+        newOpenBtn.classList.add('project-box__button', 'btn-primary');
+        newOpenBtn.textContent = 'Open Project';
+        newContentContainer.appendChild(newOpenBtn);
+
+        const newOpenBtnIcon = document.createElement('i');
+        newOpenBtnIcon.classList.add('project-box__button-icon', 'fa-solid', 'fa-arrow-up-right-from-square');
+        newOpenBtn.prepend(newOpenBtnIcon);
+
+        if (project.isPrioritised) {
+            const newPrioritisedIcon = document.createElement('i');
+            newPrioritisedIcon.classList.add('project-box__icon', 'fa-solid', 'fa-star');
+            newIconContainer.appendChild(newPrioritisedIcon);
+        } else {
+            console.log('Not prioritised');
+        }
+
+        const newDeleteBtn = document.createElement('button');
+        newDeleteBtn.classList.add('btn-transparent');
+        newIconContainer.appendChild(newDeleteBtn);
+
+        const newDeleteBtnIcon = document.createElement('i');
+        newDeleteBtnIcon.classList.add('project-box__icon', 'fa-solid', 'fa-trash-can');
+        newDeleteBtn.appendChild(newDeleteBtnIcon);
+
+
+    });
+}
+
+renderProjectListData();

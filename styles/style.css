@@ -101,6 +101,11 @@ button:hover {
     filter: brightness(95%);
 }
 
+/* Text Styling */
+.bold-text {
+    font-weight: var(--font-weight-heavy);
+}
+
 
 /* General */
 .container {
