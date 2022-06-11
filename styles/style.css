@@ -40,6 +40,10 @@ body {
 
 
 /* Universal Buttons */
+button {
+    font-family: var(--font-primary);
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -55,6 +59,23 @@ button:hover {
     filter: brightness(95%);
 }
 
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: 1px solid var(--color-primary);
+}
 
 /* Links */
 .text-link {
