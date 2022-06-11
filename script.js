@@ -112,13 +112,16 @@ let userData = {
             "title": "Some Project",
             "summary": "This is a summary of some project...",
             "description": "",
-            "isPrioritised": true,
             "date": {
                 "dateCreated": "",
                 "hasDueDate": true,
                 "dueDate": "15 August, 2022"
             },
             "tasks": [],
+            "isCompleted": false,
+            "isInProgress": true,
+            "isIncomplete": true,
+            "isPrioritised": true,
             "isDeleted": false
         },
         {
@@ -126,13 +129,33 @@ let userData = {
             "title": "Yet Another Project",
             "summary": "",
             "description": "",
-            "isPrioritised": false,
             "date": {
                 "dateCreated": "",
                 "hasDueDate": false,
                 "dueDate": "15 August, 2022"
             },
             "tasks": [],
+            "isCompleted": false,
+            "isInProgress": true,
+            "isIncomplete": true,
+            "isPrioritised": false,
+            "isDeleted": false
+        },
+        {
+            "id": 3,
+            "title": "To-Do List Project for Portfolio",
+            "summary": "This is an advanced to-do list for my portfolio site. Features include adding, editing, and deleting items, as well as a large administrative section.",
+            "description": "",
+            "date": {
+                "dateCreated": "",
+                "hasDueDate": true,
+                "dueDate": "1 August, 2022"
+            },
+            "tasks": [],
+            "isCompleted": false,
+            "isInProgress": true,
+            "isIncomplete": true,
+            "isPrioritised": true,
             "isDeleted": false
         }
     ]
