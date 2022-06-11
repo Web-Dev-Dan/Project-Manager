@@ -107,6 +107,7 @@ let userData = {
     "userName": "User",
     "numberOfProjects": 0,
     "listOfProjects": [
+        /*
         {
             "id": 1,
             "title": "Some Project",
@@ -158,11 +159,14 @@ let userData = {
             "isPrioritised": true,
             "isDeleted": false
         }
+        */
     ]
 };
 
 const createNewProjectInput = document.getElementById('createNewProjectInput');
 const createNewProjectInputBtn = document.getElementById('createNewProjectInputBtn');
+
+let openProjectBtns;
 
 const createNewProject = (e) => {
     e.preventDefault();
@@ -266,6 +270,7 @@ const renderProjectListData = () => {
 
         const newOpenBtn = document.createElement('button');
         newOpenBtn.classList.add('project-box__button', 'btn-primary');
+        newOpenBtn.setAttribute('data-id', project.id);
         newOpenBtn.textContent = 'Open Project';
         newContentContainer.appendChild(newOpenBtn);
 
@@ -289,7 +294,40 @@ const renderProjectListData = () => {
             // console.log('Not prioritised');
         }
 
+        // Update 'open project' buttons
+        openProjectBtns = document.querySelectorAll('.project-box__button');
     });
+
+
+    // ----- 📭 Open Projects: 📭 -----
+
+
+    if (openProjectBtns) {
+        const openProjects = (id) => {
+            /*
+            RENDER THIS TO MAIN (DELETE INNER CONTAINER FIRST)
+            console.log(`Open project button pressed for data-type ${id}.`);
+            const testBox = document.getElementById('test');
+            const newP = document.createElement('p');
+            newP.textContent = userData.listOfProjects[id - 1].title;
+            testBox.appendChild(newP);
+            */
+        }
+
+        openProjectBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                console.log(Number(button.getAttribute('data-id'))); /* Temporary */
+                openProjects(button.getAttribute('data-id'));
+            });
+        });
+    }
+
+
+
 }
 
 renderProjectListData();
+
+
+
+
