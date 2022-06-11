@@ -120,6 +120,20 @@ let userData = {
             },
             "tasks": [],
             "isDeleted": false
+        },
+        {
+            "id": 2,
+            "title": "Yet Another Project",
+            "summary": "",
+            "description": "",
+            "isPrioritised": false,
+            "date": {
+                "dateCreated": "",
+                "hasDueDate": false,
+                "dueDate": "15 August, 2022"
+            },
+            "tasks": [],
+            "isDeleted": false
         }
     ]
 };
@@ -197,6 +211,14 @@ const renderProjectListData = () => {
         newOpenBtnIcon.classList.add('project-box__button-icon', 'fa-solid', 'fa-arrow-up-right-from-square');
         newOpenBtn.prepend(newOpenBtnIcon);
 
+        const newDeleteBtn = document.createElement('button');
+        newDeleteBtn.classList.add('btn-transparent', 'project-box__delete-btn');
+        newIconContainer.appendChild(newDeleteBtn);
+
+        const newDeleteBtnIcon = document.createElement('i');
+        newDeleteBtnIcon.classList.add('project-box__icon', 'fa-solid', 'fa-trash-can');
+        newDeleteBtn.appendChild(newDeleteBtnIcon);
+
         if (project.isPrioritised) {
             const newPrioritisedIcon = document.createElement('i');
             newPrioritisedIcon.classList.add('project-box__icon', 'fa-solid', 'fa-star');
@@ -204,14 +226,6 @@ const renderProjectListData = () => {
         } else {
             console.log('Not prioritised');
         }
-
-        const newDeleteBtn = document.createElement('button');
-        newDeleteBtn.classList.add('btn-transparent');
-        newIconContainer.appendChild(newDeleteBtn);
-
-        const newDeleteBtnIcon = document.createElement('i');
-        newDeleteBtnIcon.classList.add('project-box__icon', 'fa-solid', 'fa-trash-can');
-        newDeleteBtn.appendChild(newDeleteBtnIcon);
 
 
     });

@@ -6,7 +6,7 @@
 .aside-inner {
     /* background-color: red; */
     width: 100%;
-    max-height: 800px;
+    /* max-height: 800px; */
     padding: 30px;
     overflow-y: scroll;
 }
@@ -81,7 +81,7 @@
 .project-box__icon-container {
     margin-left: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
 }
 
