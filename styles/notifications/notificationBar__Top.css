@@ -1,0 +1,33 @@
+.top-notification-bar {
+    background-color: black;
+    text-align: center;
+    position: relative;
+}
+
+.top-notification-bar__text {
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-light);
+    line-height: 1.5;
+    padding: 15px 50px;
+}
+
+.top-notification-bar__button {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+/* ----- Media Queries ----- */
+@media only screen and (max-width: 600px) {
+    .top-notification-bar__text {
+        font-size: 1.4rem;
+        padding: 10px 45px;
+    }
+
+    .top-notification-bar__button {
+        font-size: 1.8rem;
+    }
+}

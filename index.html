@@ -25,15 +25,19 @@
     <title>Project Manager | Home</title>
     <!-- Styles -->
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/notifications/notificationBar__Top.css">
     <link rel="stylesheet" href="./styles/navbar/navbar.css">
     <link rel="stylesheet" href="./styles/footer/footer.css">
+    <link rel="stylesheet" href="./styles/display.css"> <!-- Keep at bottom of styling -->
+    <!-- Script -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="container">
         <!-- Top Notification -->
-        <div class="top-notification-bar">
-            <button class="top-notification-bar__button btn-transparent">
+        <div id="notificationBar" class="top-notification-bar">
+            <button id="notificationBar__CloseBtn" class="top-notification-bar__button btn-transparent">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <p class="top-notification-bar__text">Welcome to <strong>taskr v.1.0.0</strong>! This application is
@@ -66,7 +70,12 @@
             </div>
         </nav>
         <main class="main">Main</main>
-        <footer class="footer">Created by Daniel Healy. Copyright &copy; 2022. All rights reserved.</footer>
+        <footer class="footer">
+            <p>Created by <a class="text-link" href="https://twitter.com/web_dev_dan" target="_blank"
+                    rel="noopener noreferrer">Daniel Healy</a>. Copyright &copy; <span id="currentYearText">2022</span>.
+                All
+                rights reserved.</p>
+        </footer>
     </div>
 </body>
 

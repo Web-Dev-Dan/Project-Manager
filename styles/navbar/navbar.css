@@ -7,6 +7,7 @@
     align-items: center;
 }
 
+/* Navigation Header*/
 .nav__header-container {
     display: flex;
     justify-content: center;
@@ -22,7 +23,7 @@
     margin-right: 15px;
 }
 
-
+/* Navigation Links */
 .nav-links__button:not(:last-child) {
     margin-right: 10px;
 }
@@ -30,4 +31,32 @@
 .nav-links__button-icon {
     font-size: 30px;
     padding: 10px;
+}
+
+
+/* ----- Media Queries ----- */
+@media only screen and (max-width: 600px) {
+    .nav {
+        height: 80px;
+    }
+
+    /* Navigation Header */
+    .nav__header {
+        font-size: 30px;
+    }
+
+    .nav__header-icon {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+
+    /* Navigation Links */
+    .nav-links__button:not(:last-child) {
+        margin-right: 5px;
+    }
+
+    .nav-links__button-icon {
+        font-size: 26px;
+        padding: 5px;
+    }
 }

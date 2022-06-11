@@ -1,23 +1,25 @@
 :root {
-    /* Fonts */
+    /* ----- Fonts ----- */
     --font-primary: 'Nunito', sans-serif;
     --font-secondary: 'Ubuntu', sans-serif;
 
-    /* Font Weight */
+    /* ----- Font Weight ----- */
     --font-weight-light: 100;
     --font-weight-medium: 500;
     --font-weight-heavy: 900;
 
-    /* Colours */
+    /* ----- 🌈 Colours 🌈 ----- */
+    /* 'Stella' Theme */
     --color-primary: #474747;
     --color-light: #ffffff;
     --color-dark: #f1f1f1;
 
+    /* 'Eclipse' Theme */
     --color-primary: #f1f1f1;
     --color-light: #333333;
     --color-dark: #3f3f3f;
 
-    /* Box Shadow */
+    /* ----- Box Shadow ----- */
     --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -54,6 +56,20 @@ button:hover {
 }
 
 
+/* Links */
+.text-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 5px;
+}
+
+.text-link:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+
+
 
 
 
@@ -64,26 +80,6 @@ button:hover {
     flex-direction: column;
 }
 
-.top-notification-bar {
-    background-color: black;
-    text-align: center;
-    position: relative;
-}
-
-.top-notification-bar__text {
-    font-size: 1.6rem;
-    font-weight: var(--font-weight-light);
-    line-height: 1.5;
-    padding: 15px 100px;
-}
-
-.top-notification-bar__button {
-    font-size: 2rem;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
 
 /* Temporary */
 .main {
