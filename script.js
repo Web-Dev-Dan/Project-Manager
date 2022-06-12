@@ -115,6 +115,7 @@ let userData = {
             "description": "",
             "date": {
                 "dateCreated": "",
+                "timeCreated": "",
                 "hasDueDate": true,
                 "dueDate": "15 August, 2022"
             },
@@ -132,6 +133,7 @@ let userData = {
             "description": "",
             "date": {
                 "dateCreated": "",
+                "timeCreated": "",
                 "hasDueDate": false,
                 "dueDate": "15 August, 2022"
             },
@@ -149,6 +151,7 @@ let userData = {
             "description": "",
             "date": {
                 "dateCreated": "",
+                "timeCreated": "",
                 "hasDueDate": true,
                 "dueDate": "1 August, 2022"
             },
@@ -180,6 +183,7 @@ const createNewProject = (e) => {
             "description": "",
             "date": {
                 "dateCreated": "",
+                "timeCreated": "",
                 "hasDueDate": false,
                 "dueDate": ""
             },
@@ -300,10 +304,34 @@ const renderProjectListData = () => {
 
 
     // ----- 📭 Open Projects: 📭 -----
-
+    const main = document.getElementById('main');
+    let mainContainer = document.getElementById('mainContainer');
 
     if (openProjectBtns) {
         const openProjects = (id) => {
+
+            // console.log(userData.listOfProjects[id - 1]);
+            let currentProject = userData.listOfProjects[id - 1];
+
+            if (mainContainer) {
+                mainContainer = document.getElementById('mainContainer');
+                mainContainer.remove();
+
+
+                const newMainContainer = document.createElement('div');
+                newMainContainer.classList.add('main-inner');
+                newMainContainer.id = 'mainContainer';
+                main.appendChild(newMainContainer);
+
+                // const newTitle = document.createElement('h1');
+                // newTitle.classList.add('project-detail__title');
+                // newTitle.textContent = currentProject.title;
+                // newMainContainer.appendChild(newTitle);
+            }
+
+
+
+
             /*
             RENDER THIS TO MAIN (DELETE INNER CONTAINER FIRST)
             console.log(`Open project button pressed for data-type ${id}.`);
