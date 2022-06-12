@@ -107,7 +107,7 @@ let userData = {
     "userName": "User",
     "numberOfProjects": 0,
     "listOfProjects": [
-
+        /*
         {
             "id": 1,
             "title": "Some Project",
@@ -162,7 +162,7 @@ let userData = {
             "isPrioritised": true,
             "isDeleted": false
         }
-
+        */
     ]
 };
 
