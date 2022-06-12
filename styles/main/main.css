@@ -181,7 +181,3 @@
 .task-box:hover {
     background-color: var(--color-dark);
 }
-
-.test-class {
-    color: red;
-}
