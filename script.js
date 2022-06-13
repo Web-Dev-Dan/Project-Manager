@@ -317,11 +317,94 @@ const renderProjectListData = () => {
                 mainContainer = document.getElementById('mainContainer');
                 mainContainer.remove();
 
-
+                // Create Main Inner
                 const newMainContainer = document.createElement('div');
                 newMainContainer.classList.add('main-inner');
                 newMainContainer.id = 'mainContainer';
                 main.appendChild(newMainContainer);
+
+                // Create Project Detail
+                const newMainInnerProjectDetail = document.createElement('div');
+                newMainInnerProjectDetail.classList.add('main-inner__project-detail');
+                newMainContainer.appendChild(newMainInnerProjectDetail);
+                // ----- Project Detail (Button Container)
+                const newProjectDetailButtonContainer = document.createElement('div');
+                newProjectDetailButtonContainer.classList.add('project-detail__button-container');
+                newMainInnerProjectDetail.appendChild(newProjectDetailButtonContainer);
+                // --------------- Button Container (Button)
+                const newProjectDetailButton = document.createElement('button');
+                const newProjectDetailButtonIcon = document.createElement('i');
+                newProjectDetailButton.classList.add('project-detail__button', 'btn-primary');
+                newProjectDetailButtonIcon.classList.add('project-detail__button-icon', 'fa-solid', 'fa-trash-can');
+                newProjectDetailButton.textContent = ' Delete Project';
+                newProjectDetailButton.prepend(newProjectDetailButtonIcon);
+                newProjectDetailButtonContainer.appendChild(newProjectDetailButton);
+                // --------------- Button Container (Status Button Container)
+                const newProjectDetailStatusButtonContainer = document.createElement('div');
+                newProjectDetailStatusButtonContainer.classList.add('project-detail__status-button-container');
+                newProjectDetailButtonContainer.appendChild(newProjectDetailStatusButtonContainer);
+                // ------------------------- Status Button Container ('Not Started' Button)
+                const newProjectDetailStatusButton__notStarted = document.createElement('button');
+                const newProjectDetailStatusButton__notStartedIcon = document.createElement('i');
+                newProjectDetailStatusButton__notStarted.classList.add('project-detail__button--status', 'project-detail__button', 'btn-primary');
+                newProjectDetailStatusButton__notStartedIcon.classList.add('project-detail__button-icon', 'fa-solid', 'fa-circle-stop');
+                newProjectDetailStatusButton__notStarted.textContent = ' Not Started';
+                newProjectDetailStatusButton__notStarted.prepend(newProjectDetailStatusButton__notStartedIcon);
+                newProjectDetailStatusButtonContainer.appendChild(newProjectDetailStatusButton__notStarted);
+                if (!currentProject.isInProgress) {
+                    newProjectDetailStatusButton__notStarted.classList.add('btn-selected');
+                }
+                // ------------------------- Status Button Container ('In Progress' Button)
+                const newProjectDetailStatusButton__inProgress = document.createElement('button');
+                const newProjectDetailStatusButton__inProgressIcon = document.createElement('i');
+                newProjectDetailStatusButton__inProgress.classList.add('project-detail__button--status', 'project-detail__button', 'btn-primary');
+                newProjectDetailStatusButton__inProgressIcon.classList.add('project-detail__button-icon', 'fa-solid', 'fa-spinner');
+                newProjectDetailStatusButton__inProgress.textContent = ' In Progress';
+                newProjectDetailStatusButton__inProgress.prepend(newProjectDetailStatusButton__inProgressIcon);
+                newProjectDetailStatusButtonContainer.appendChild(newProjectDetailStatusButton__inProgress);
+                if (currentProject.isInProgress) {
+                    newProjectDetailStatusButton__inProgress.classList.add('btn-selected');
+                }
+                // ------------------------- Status Button Container ('Complete' Button)
+                const newProjectDetailStatusButton__complete = document.createElement('button');
+                const newProjectDetailStatusButton__completeIcon = document.createElement('i');
+                newProjectDetailStatusButton__complete.classList.add('project-detail__button--status', 'project-detail__button', 'btn-primary');
+                newProjectDetailStatusButton__completeIcon.classList.add('project-detail__button-icon', 'fa-solid', 'fa-circle-check');
+                newProjectDetailStatusButton__complete.textContent = ' Complete';
+                newProjectDetailStatusButton__complete.prepend(newProjectDetailStatusButton__completeIcon);
+                newProjectDetailStatusButtonContainer.appendChild(newProjectDetailStatusButton__complete);
+                if (currentProject.isCompleted) {
+                    newProjectDetailStatusButton__complete.classList.add('btn-selected');
+                }
+                // ------------------------- Status Button Container (Star Button)
+                const newProjectDetailStatusButton__star = document.createElement('button');
+                const newProjectDetailStatusButton__starIcon = document.createElement('i');
+                newProjectDetailStatusButton__star.classList.add('project-detail__button--priority', 'project-detail__button', 'btn-primary');
+                newProjectDetailStatusButton__starIcon.classList.add('fa-solid', 'fa-star');
+                newProjectDetailStatusButton__star.appendChild(newProjectDetailStatusButton__starIcon);
+                newProjectDetailStatusButtonContainer.appendChild(newProjectDetailStatusButton__star);
+                if (currentProject.isPrioritised) {
+                    newProjectDetailStatusButton__star.classList.add('btn-selected');
+                }
+                // ----- Project Detail (Date Container)
+                const newProjectDetailDateContainer = document.createElement('div');
+                newProjectDetailDateContainer.classList.add('project-detail__date-container');
+                newMainInnerProjectDetail.appendChild(newProjectDetailDateContainer);
+                // ----- Project Detail (Title)
+                const newProjectDetailTitle = document.createElement('h3');
+                newProjectDetailTitle.classList.add('project-detail__title');
+                newProjectDetailTitle.textContent = currentProject.title;
+                newMainInnerProjectDetail.appendChild(newProjectDetailTitle);
+                // ----- Project Detail (Text Container)
+                const newProjectDetailTextContainer = document.createElement('div');
+                newProjectDetailTextContainer.classList.add('project-detail__text-container');
+                newMainInnerProjectDetail.appendChild(newProjectDetailTextContainer);
+
+
+                // Create Project Tasks
+                const newMainInnerProjectTasks = document.createElement('div');
+                newMainInnerProjectTasks.classList.add('main-inner__project-tasks');
+                newMainContainer.appendChild(newMainInnerProjectTasks);
 
                 // const newTitle = document.createElement('h1');
                 // newTitle.classList.add('project-detail__title');
