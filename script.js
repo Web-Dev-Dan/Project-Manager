@@ -107,15 +107,15 @@ let userData = {
     "userName": "User",
     "numberOfProjects": 0,
     "listOfProjects": [
-        /*
+
         {
             "id": 1,
             "title": "Some Project",
             "summary": "This is a summary of some project...",
             "description": "",
             "date": {
-                "dateCreated": "",
-                "timeCreated": "",
+                "dateCreated": "Wednesday 29 September, 2021",
+                "timeCreated": "09:08",
                 "hasDueDate": true,
                 "dueDate": "15 August, 2022"
             },
@@ -132,14 +132,14 @@ let userData = {
             "summary": "",
             "description": "",
             "date": {
-                "dateCreated": "",
-                "timeCreated": "",
+                "dateCreated": "Tuesday 12 December, 2021",
+                "timeCreated": "13:24",
                 "hasDueDate": false,
-                "dueDate": "15 August, 2022"
+                "dueDate": ""
             },
             "tasks": [],
             "isCompleted": false,
-            "isInProgress": true,
+            "isInProgress": false,
             "isIncomplete": true,
             "isPrioritised": false,
             "isDeleted": false
@@ -150,8 +150,8 @@ let userData = {
             "summary": "This is an advanced to-do list for my portfolio site. Features include adding, editing, and deleting items, as well as a large administrative section.",
             "description": "",
             "date": {
-                "dateCreated": "",
-                "timeCreated": "",
+                "dateCreated": "Saturday 1 May, 2019",
+                "timeCreated": "12:45",
                 "hasDueDate": true,
                 "dueDate": "1 August, 2022"
             },
@@ -162,7 +162,7 @@ let userData = {
             "isPrioritised": true,
             "isDeleted": false
         }
-        */
+
     ]
 };
 
@@ -390,6 +390,22 @@ const renderProjectListData = () => {
                 const newProjectDetailDateContainer = document.createElement('div');
                 newProjectDetailDateContainer.classList.add('project-detail__date-container');
                 newMainInnerProjectDetail.appendChild(newProjectDetailDateContainer);
+                // --------------- Date Container (Date Created)
+                const newProjectDetailDateContainer__dateCreated = document.createElement('p');
+                const newProjectDetailDateContainer__dateCreatedStrong = document.createElement('strong');
+                newProjectDetailDateContainer__dateCreated.textContent = `${currentProject.date.dateCreated} | ${currentProject.date.timeCreated}`;
+                newProjectDetailDateContainer__dateCreatedStrong.textContent = 'Created: ';
+                newProjectDetailDateContainer__dateCreated.prepend(newProjectDetailDateContainer__dateCreatedStrong);
+                newProjectDetailDateContainer.appendChild(newProjectDetailDateContainer__dateCreated);
+                // --------------- Date Container (Date Due)
+                if (currentProject.date.hasDueDate) {
+                    const newProjectDetailDateContainer__dateDue = document.createElement('p');
+                    const newProjectDetailDateContainer__dateDueStrong = document.createElement('strong');
+                    newProjectDetailDateContainer__dateDue.textContent = currentProject.date.dueDate;
+                    newProjectDetailDateContainer__dateDueStrong.textContent = 'Date Due: ';
+                    newProjectDetailDateContainer__dateDue.prepend(newProjectDetailDateContainer__dateDueStrong);
+                    newProjectDetailDateContainer.appendChild(newProjectDetailDateContainer__dateDue);
+                }
                 // ----- Project Detail (Title)
                 const newProjectDetailTitle = document.createElement('h3');
                 newProjectDetailTitle.classList.add('project-detail__title');
