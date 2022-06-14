@@ -148,7 +148,6 @@ let userData = {
             "tasks": [],
             "isCompleted": false,
             "isInProgress": true,
-            "isIncomplete": true,
             "isPrioritised": true,
             "isDeleted": false
         },
@@ -166,7 +165,6 @@ let userData = {
             "tasks": [],
             "isCompleted": false,
             "isInProgress": false,
-            "isIncomplete": true,
             "isPrioritised": false,
             "isDeleted": false
         },
@@ -184,7 +182,6 @@ let userData = {
             "tasks": [],
             "isCompleted": false,
             "isInProgress": true,
-            "isIncomplete": true,
             "isPrioritised": true,
             "isDeleted": false
         }
@@ -216,7 +213,6 @@ const createNewProject = (e) => {
             "tasks": [],
             "isCompleted": false,
             "isInProgress": false,
-            "isIncomplete": true,
             "isPrioritised": false,
             "isDeleted": false
         });
@@ -452,6 +448,9 @@ const renderProjectListData = () => {
                 // newTitle.classList.add('project-detail__title');
                 // newTitle.textContent = currentProject.title;
                 // newMainContainer.appendChild(newTitle);
+
+                // Project Buttons ('Prioritised', 'Not Started', 'In Progress', and 'Complete')
+                // ----- Prioritised Button
                 newProjectDetailStatusButton__star.addEventListener('click', () => {
                     currentProject.isPrioritised = !currentProject.isPrioritised;
                     const checkPrioritised = () => {
@@ -464,6 +463,41 @@ const renderProjectListData = () => {
                     checkPrioritised();
                     renderProjectListData();
                 })
+
+                const checkButtonStatus = () => {
+                    newProjectDetailStatusButton__notStarted.classList.remove('btn-selected');
+                    newProjectDetailStatusButton__inProgress.classList.remove('btn-selected');
+                    newProjectDetailStatusButton__complete.classList.remove('btn-selected');
+
+                    if (!currentProject.isInProgress && !currentProject.isCompleted) {
+                        newProjectDetailStatusButton__notStarted.classList.add('btn-selected');
+                    } else if (currentProject.isInProgress) {
+                        newProjectDetailStatusButton__inProgress.classList.add('btn-selected');
+                    } else if (!currentProject.isInProgress && currentProject.isCompleted) {
+                        newProjectDetailStatusButton__complete.classList.add('btn-selected');
+                        newProjectDetailStatusButton__notStarted.classList.remove('btn-selected');
+                    }
+                }
+                // ----- Not Started Button
+                newProjectDetailStatusButton__notStarted.addEventListener('click', () => {
+                    currentProject.isInProgress = false;
+                    currentProject.isCompleted = false;
+                    checkButtonStatus();
+                })
+                // ----- In Progress Button
+                newProjectDetailStatusButton__inProgress.addEventListener('click', () => {
+                    currentProject.isInProgress = true;
+                    currentProject.isCompleted = false;
+                    checkButtonStatus();
+                })
+                // ----- Complete Button
+                newProjectDetailStatusButton__complete.addEventListener('click', () => {
+                    currentProject.isInProgress = false;
+                    currentProject.isCompleted = true;
+                    checkButtonStatus();
+                })
+
+
             }
 
 
