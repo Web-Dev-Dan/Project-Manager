@@ -41,6 +41,10 @@
     color: var(--color-light);
 }
 
+.btn-selected:hover {
+    filter: brightness(90%);
+}
+
 .project-detail__button--priority {
     margin-left: 20px;
 }
