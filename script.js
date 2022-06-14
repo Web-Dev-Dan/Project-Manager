@@ -9,6 +9,32 @@ const currentYearText = document.getElementById('currentYearText');
 currentYearText.textContent = currentYear;
 
 
+// ----- 📅 Current Date / Day 📅 -----
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+const calculateFullDate = () => {
+    let newDate = new Date();
+    let currentDay = days[newDate.getDay() - 1];
+    let currentDate = newDate.getDate();
+    let currentMonth = months[newDate.getMonth()];
+    let currentYear = newDate.getFullYear();
+
+    return `${currentDay} ${currentDate} ${currentMonth}, ${currentYear}`;
+}
+
+
+// ----- Current Time -----
+const calculateTime = () => {
+    let newTime = new Date();
+    let currentHour = newTime.getHours();
+    let currentMinutes = newTime.getMinutes();
+
+    // Update to include zeros for numbers less than ten
+    return `${currentHour}:${currentMinutes}`;
+}
+
+
 // ----- ❗️ Close Notification Bar ❗️ -----
 const notificationBar = document.getElementById('notificationBar');
 const notificationBar__CloseBtn = document.getElementById('notificationBar__CloseBtn');
@@ -182,8 +208,8 @@ const createNewProject = (e) => {
             "summary": "",
             "description": "",
             "date": {
-                "dateCreated": "",
-                "timeCreated": "",
+                "dateCreated": calculateFullDate(),
+                "timeCreated": calculateTime(),
                 "hasDueDate": false,
                 "dueDate": ""
             },
