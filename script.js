@@ -133,7 +133,7 @@ let userData = {
     "userName": "User",
     "numberOfProjects": 0,
     "listOfProjects": [
-
+        /*
         {
             "id": 1,
             "title": "Some Project",
@@ -188,7 +188,7 @@ let userData = {
             "isPrioritised": true,
             "isDeleted": false
         }
-
+        */
     ]
 };
 
@@ -452,6 +452,18 @@ const renderProjectListData = () => {
                 // newTitle.classList.add('project-detail__title');
                 // newTitle.textContent = currentProject.title;
                 // newMainContainer.appendChild(newTitle);
+                newProjectDetailStatusButton__star.addEventListener('click', () => {
+                    currentProject.isPrioritised = !currentProject.isPrioritised;
+                    const checkPrioritised = () => {
+                        if (currentProject.isPrioritised) {
+                            newProjectDetailStatusButton__star.classList.add('btn-selected');
+                        } else {
+                            newProjectDetailStatusButton__star.classList.remove('btn-selected');
+                        }
+                    }
+                    checkPrioritised();
+                    renderProjectListData();
+                })
             }
 
 
